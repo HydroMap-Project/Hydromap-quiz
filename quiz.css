@@ -93,3 +93,86 @@ header h1 {
     font-size: 18px;
     margin-bottom: 10px;
 }
+
+#contatoForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#contatoForm input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--text, #ffffff);
+    font-size: 14px;
+}
+
+#enviarBtn {
+    align-self: flex-start;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary, #2563eb);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#enviarBtn:hover {
+    filter: brightness(1.2);
+    transform: translateY(-1px);
+}
+
+.quiz-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 18px 20px;
+    background-color: var(--card, #1f1f1f);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    flex-grow: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease;
+}
+
+.quiz-container h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+}
+
+#quiz {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+#respostas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.botoes-controle {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.botoes-controle button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hidden { display: none; }

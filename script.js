@@ -122,6 +122,8 @@ let respostaSelecionada = null;
 
 const pergunta = document.getElementById("pergunta");
 const respostas = document.getElementById("respostas");
+const proximo = document.getElementById("proximo");
+const voltar = document.getElementById("voltar");
 
 function carregarPergunta(){
 const q = perguntas[atual];
@@ -141,5 +143,34 @@ respostaSelecionada = indice;
 respostas.appendChild(btn);
 });
 }
+
+voltar.addEventListener("click", () => {
+    if (atual > 0) {
+        atual--;
+        respostaSelecionada = null;
+        carregarPergunta();
+    } else {
+        alert("Você já está na primeira pergunta!");
+    }
+});
+
+proximo.addEventListener("click",()=>{
+if(respostaSelecionada === null){
+alert("Selecione uma resposta");
+return;
+}
+if(respostaSelecionada === perguntas[atual].correta){
+pontos++;
+}
+atual++;
+respostaSelecionada = null;
+if(atual < perguntas.length){
+carregarPergunta();
+}else{
+document.getElementById("quiz").classList.add("hidden");
+document.getElementById("resultado").classList.remove("hidden");
+document.getElementById("pontuacao").textContent = `Você acertou ${pontos} de ${perguntas.length} perguntas`;
+}
+}); 
 
 carregarPergunta();
